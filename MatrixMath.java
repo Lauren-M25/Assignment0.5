@@ -14,6 +14,18 @@ public class MatrixMath {
     
     //*** Instance Variables ***
     
+    // ********** Constructors ***********
+    
+    //*****************************************************
+    // Purpose: create matrix math
+    // Interface: IN: none
+    // Returns: none
+    // ****************************************************
+    
+        public MatrixMath(){
+            
+        } // end constructor
+    
     //*** Getters ***
     
     //*****************************************************
@@ -69,18 +81,19 @@ public class MatrixMath {
         table dotproduct = new table(blankdata, t1.getrows(), t2.getcolumns());
         
         if(t1.getcolumns() != t2.getrows()){
-            System.out.println("The two matrices do not have the correct dimensions to be multiplied.");
-        } else {
-            for(int i = 0; i < dotproduct.getrows(); i++){
-                for(int k = 0; k < dotproduct.getcolumns(); k++){
-                    int product = 0;
-                    for(int j = 0; j < t1.getcolumns(); j++){
-                        product += (t1.getelement(k,j) * t2.getelement(j,k));
-                    } // end get product of index k,j and j,k
-                    dotproduct.changeelementvalue(i, k, product);
-                } // end set index i,k to product
-            } // end dot product
-        } // end if/else
+            System.out.println("The two matrices do not have the required dimensions to be multiplied.");
+        } // end can't multiply
+        else {
+                    for(int j = 0; j < t1.getrows(); j++){
+                        for(int k = 0; k < t2.getcolumns(); k++){
+                            int product = 0;
+                            for(int m = 0; m < t1.getcolumns(); m++){
+                                product += t1.getelement(j, m) * t2.getelement(m, k);
+                            }
+                            dotproduct.changeelementvalue(j, k, product);
+                        }
+                    }
+        }
         
         return dotproduct;
     }
