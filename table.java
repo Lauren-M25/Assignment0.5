@@ -16,9 +16,9 @@
     
     // ********** instance variable **********
     
-        int rows = 0;
-        int columns = 0;
-        int[][] data;
+        int rows = 0; // the amount of rows in the table
+        int columns = 0; // the amount of columns in the table
+        int[][] data; // the matrix of data for the table
         
     // ********** CONSTRUCTORS ***********
     

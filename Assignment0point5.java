@@ -34,8 +34,8 @@ public class Assignment0point5 {  // begin class
         String tabSpace = "      "; // six spaces
         String nl = System.lineSeparator(); // new line character for file writing
         
-        table[] tables = new table[10];
-        MatrixMath MatrixMath = new MatrixMath();
+        table[] tables = new table[10]; // an array for storing tables
+        MatrixMath MatrixMath = new MatrixMath(); // declare the MatrixMath class
         
     // ***** create objects *******
     
@@ -60,8 +60,8 @@ public class Assignment0point5 {  // begin class
         
     // ************************ get input **********************
 
-        strin = fin.readLine();
-        int m = 0;
+        strin = fin.readLine(); // read int the first line of data
+        int m = 0; // set the index variable to 0;
         
         while(strin != null){
             tokens = strin.split(delim); // set tokens
@@ -86,38 +86,38 @@ public class Assignment0point5 {  // begin class
         
         System.out.println("Add two matrices.");
         
-        tables[0].print();
+        tables[0].print(); // print the first table
         System.out.println("+" + nl);
-        tables[1].print();
+        tables[1].print(); // print the second table
         System.out.println("=" + nl);
         
-        table t = MatrixMath.getSum(tables[0],tables[1]);
-        t.print();
+        table t = MatrixMath.getSum(tables[0],tables[1]); // use the getSum method to add the tables
+        t.print(); // pritn the sum of the tables
         
         System.out.println("Scalar multiplication.");
         
-        tables[2].print();
+        tables[2].print(); // print the third table
         System.out.println("*" + nl);
         System.out.println("3" + nl);
         System.out.println("=" + nl);
-        t = MatrixMath.getProduct(tables[2], 3);
-        t.print();
+        t = MatrixMath.getProduct(tables[2], 3); // use the getProduct method to multiply the table by 3
+        t.print(); // print the product
         
         System.out.println("Multiply two matrices.");
         
-        tables[3].print();
+        tables[3].print(); // print the fourth table
         System.out.println("*" + nl);
-        tables[4].print();
+        tables[4].print(); // print the fifth table
         System.out.println("=" + nl);
-        t = MatrixMath.getDotProduct(tables[3], tables[4]);
-        t.print();
+        t = MatrixMath.getDotProduct(tables[3], tables[4]); // use the getDotProduct method to multiply the tables
+        t.print(); // print the dot product
         
         System.out.println("Transposition.");
         
-        tables[5].print();
+        tables[5].print(); // print the sixth table
         System.out.println("transpose" + nl);
-        t = MatrixMath.transpose(tables[5]);
-        t.print();
+        t = MatrixMath.transpose(tables[5]); // use the transpose method to transpose the table
+        t.print(); // pritn the transposed table
         
     // ************************ print output ****************************
     

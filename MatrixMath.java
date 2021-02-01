@@ -35,18 +35,19 @@ public class MatrixMath {
     // ****************************************************
     
     public table getSum(table t1, table t2){
-        int[][] blankdata = new int[t1.getrows()][t1.getcolumns()];
-        table sum = new table(blankdata, t1.getrows(), t1.getcolumns());
+        int[][] blankdata = new int[t1.getrows()][t1.getcolumns()]; // create a new matrix with blank data
+        table sum = new table(blankdata, t1.getrows(), t1.getcolumns()); // create a new table
         
         if(t1.getrows() != t2.getrows() || t1.getcolumns() != t2.getcolumns()){
             System.out.println("The two matrices do not have the same dimensions and cannot be added.");
-        } else {
+        } // end cannot add
+        else {
             for(int i = 0; i < sum.getrows(); i++){
                 for(int j = 0; j < sum.getcolumns(); j++){
                     sum.changeelementvalue(i, j, (t1.getelement(i,j) + t2.getelement(i,j)));
                 } // end add row
             } // end add matrices
-        } // end if/else
+        } // end add
         
         return sum;
     }
@@ -58,8 +59,8 @@ public class MatrixMath {
     // ****************************************************
     
     public table getProduct(table t1, int multiplier){
-        int[][] blankdata = new int[t1.getrows()][t1.getcolumns()];
-        table product = new table(blankdata, t1.getrows(), t1.getcolumns());
+        int[][] blankdata = new int[t1.getrows()][t1.getcolumns()]; // create a new matrix with blank data
+        table product = new table(blankdata, t1.getrows(), t1.getcolumns()); // create a new table
         
             for(int i = 0; i < product.getrows(); i++){
                 for(int j = 0; j < product.getcolumns(); j++){
@@ -77,23 +78,23 @@ public class MatrixMath {
     // ****************************************************
     
     public table getDotProduct(table t1, table t2){
-        int[][] blankdata = new int[t1.getrows()][t2.getcolumns()];
-        table dotproduct = new table(blankdata, t1.getrows(), t2.getcolumns());
+        int[][] blankdata = new int[t1.getrows()][t2.getcolumns()]; // create a new matrix with blank data
+        table dotproduct = new table(blankdata, t1.getrows(), t2.getcolumns()); // create a new table
         
         if(t1.getcolumns() != t2.getrows()){
             System.out.println("The two matrices do not have the required dimensions to be multiplied.");
         } // end can't multiply
         else {
-                    for(int j = 0; j < t1.getrows(); j++){
-                        for(int k = 0; k < t2.getcolumns(); k++){
-                            int product = 0;
-                            for(int m = 0; m < t1.getcolumns(); m++){
-                                product += t1.getelement(j, m) * t2.getelement(m, k);
-                            }
-                            dotproduct.changeelementvalue(j, k, product);
-                        }
-                    }
-        }
+            for(int j = 0; j < t1.getrows(); j++){
+                for(int k = 0; k < t2.getcolumns(); k++){
+                    int product = 0; // set product variable to 0
+                    for(int m = 0; m < t1.getcolumns(); m++){
+                        product += t1.getelement(j, m) * t2.getelement(m, k);
+                        } // end get product of row
+                    dotproduct.changeelementvalue(j, k, product);
+                    } // end get dot product
+                } // end multiply
+        } // end multiply
         
         return dotproduct;
     }
@@ -105,8 +106,8 @@ public class MatrixMath {
     // ****************************************************
     
     public table transpose(table t1){
-        int[][] blankdata = new int[t1.getcolumns()][t1.getrows()];
-        table newt = new table(blankdata, t1.getcolumns(), t1.getrows());
+        int[][] blankdata = new int[t1.getcolumns()][t1.getrows()]; // create a new matrix with blank data
+        table newt = new table(blankdata, t1.getcolumns(), t1.getrows()); // create a new table
         
             for(int i = 0; i < newt.getrows(); i++){
                 for(int j = 0; j < newt.getcolumns(); j++){
